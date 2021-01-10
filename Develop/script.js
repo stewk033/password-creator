@@ -15,11 +15,17 @@
 // THEN the password is either displayed in an alert or written to the page
 
 // Assignment code here
-const length = () => {
+function getLength() {
   let entry = '';
-  window.prompt ("How long will your password be?");
+  entry = window.prompt ("How long will your password be?");
+  entry = parseInt(entry);
+  if (entry > 8 && entry < 128) {
+    return entry;
+  } else {
+    window.alert("Please enter a number between 8 and 128");
+  }
 }
-length();
+// length();
 // Prompts needed to enter selections:
   // - Lowercase
   // - Uppercase
@@ -27,29 +33,51 @@ length();
   // - Special Characters
 
 // store user choices
-function choices() {
-  window.confirm ("Will you be using lowercase letters?");
-  window.confirm ("How about uppercase letters?");
-  window.confirm ("Numbers?");
-  window.confirm ("Maybe some special characters?");
+function gatherChoices() {
+  const answers = {
+    lowercase: confirm("Will you be using lowercase letters?"),
+    uppercase: confirm("How about uppercase letters?"),
+    numbers: confirm("Numbers?"),
+    specialChar: confirm("Maybe some special characters?")
+  };
+  if (answers.lowercase || answers.uppercase || answers.numbers || answers.specialChar) {
+    return answers;
+  } else {
+    window.alert("You shall not pass! Please make at least one selection.")
+  };
 };
-choices();
+
+function generatePassword() {
+  let length = getLength();
+  let answers = gatherchoices();
+
+  var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var lowercase = "abcdefghijklmnopqrstuvwxyz";
+  var numbers = "1234567890"
+  var specialChar = "!@#$%^&*?+-="
+
+}
 
 // need a way to determine parameters of user selections:
-  //  - min and max of entry (8, 120)
-  //  - 
+  //  - min and max of password length (8, 128)
+
+// alter user when invalid selection has been made
+  // - must select at least one of the choices (uppercase, lowercase, numbers, special characters)
+  // - cannot select a length < 8 or > 128
+
+// display generated password in the browser window
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
+  generatePassword();
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
 }
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
