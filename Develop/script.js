@@ -64,7 +64,7 @@ function generatePassword() {
   };
   let validChar = "";
 
-//  return generateRandomPassword(length, answers, characters, validCharacters);
+//  return randomize(length, answers, characters, validCharacters);
 }
 
 
