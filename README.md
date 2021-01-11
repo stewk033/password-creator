@@ -2,12 +2,12 @@
 
 This program allows the user to generate a "random" password based on criteria that they have specified. The HTML and CSS codes were provided. The JavaScript portion has been updated to allow a seamless experience for the user, complete with prompts and intuitive user interface.
 
-##User Story
+## User Story
 * AS AN employee with access to sensitive data
 * I WANT to randomly generate a password that meets certain criteria
 * SO THAT I can create a strong password that provides greater security
 
-##Acceptance Criteria
+## Acceptance Criteria
 * GIVEN I need a new, secure password
 * WHEN I click the button to generate a password
 * THEN I am presented with a series of prompts for password criteria
@@ -24,6 +24,8 @@ This program allows the user to generate a "random" password based on criteria t
 * WHEN the password is generated
 * THEN the password is either displayed in an alert or written to the page
 
+### Screenshot
+[SCREENSHOT]
 
 
 

@@ -15,24 +15,25 @@
 // THEN the password is either displayed in an alert or written to the page
 
 // Assignment code here
+function randomNum(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+// function to determine length of password
 function getLength() {
   let entry = '';
   entry = window.prompt ("How long will your password be?");
   entry = parseInt(entry);
-  if (entry > 8 && entry < 128) {
+  if (entry >= 8 && entry <= 128) {
     return entry;
   } else {
-    window.alert("Please enter a number between 8 and 128");
+    window.alert("Try again. Please enter a number between 8 and 128");
   }
+  getLength();
 }
-// length();
-// Prompts needed to enter selections:
-  // - Lowercase
-  // - Uppercase
-  // - Numberic
-  // - Special Characters
 
-// store user choices
+// User makes choices
 function gatherChoices() {
   const answers = {
     lowercase: confirm("Will you be using lowercase letters?"),
@@ -43,36 +44,35 @@ function gatherChoices() {
   if (answers.lowercase || answers.uppercase || answers.numbers || answers.specialChar) {
     return answers;
   } else {
-    window.alert("You shall not pass! Please make at least one selection.")
-  };
-};
-
-function generatePassword() {
-  let length = getLength();
-  let answers = gatherchoices();
-
-  var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  var lowercase = "abcdefghijklmnopqrstuvwxyz";
-  var numbers = "1234567890"
-  var specialChar = "!@#$%^&*?+-="
-
+    window.alert("You shall not pass! Please make at least one character selection.")
+  }
+  gatherChoices();
 }
 
-// need a way to determine parameters of user selections:
-  //  - min and max of password length (8, 128)
+function randomize(length, answers, characters, validChar) {
+  return Object.values();
+}
 
-// alter user when invalid selection has been made
-  // - must select at least one of the choices (uppercase, lowercase, numbers, special characters)
-  // - cannot select a length < 8 or > 128
+function generatePassword() {
+  var length = getLength();
+  var answers = gatherChoices();
+  var characters = {
+    uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    lowercase: "abcdefghijklmnopqrstuvwxyz",
+    numbers: "1234567890",
+    specialChar: "!@#$%^&*?+-="
+  };
+  let validChar = "";
 
-// display generated password in the browser window
+//  return generateRandomPassword(length, answers, characters, validCharacters);
+}
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  generatePassword();
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
