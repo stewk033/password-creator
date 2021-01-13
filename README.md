@@ -27,6 +27,3 @@ SO THAT I can create a strong password that provides greater security
 ### Screenshot
 ![SCREENSHOT](https://github.com/stewk033/password-generator/blob/main/Develop/assets/pg-screenshot.png)
 
-
-
-
