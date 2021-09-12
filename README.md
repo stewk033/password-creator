@@ -1,4 +1,4 @@
-# Password Generator
+# Password Creator
 
 This program allows the user to generate a "random" password based on criteria that they have specified. The HTML and CSS codes were provided. The JavaScript portion has been updated to allow a seamless experience for the user, complete with prompts and intuitive user interface.
 
